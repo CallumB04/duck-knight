@@ -5,8 +5,8 @@ const MAX_WALK_SPEED: float = 50.0;
 const MAX_SPRINT_SPEED: float = 75.0;
 const ACCELERATION: float = 300.0;
 var current_speed: float = 0.0;
-var is_sprinting: bool = false;
-var facing_direction = "down"; ## left, right, up, down. if diagonal, priorities horizontal
+var is_sprinting := false;
+var facing_direction := "down"; ## left, right, up, down. if diagonal, priorities horizontal
 
 
 ## runs once every frame
@@ -18,7 +18,7 @@ func _process(delta):
 func update_player_movement(delta):
 	## using WASD to decide what direction[s] to move the player
 	## in Godot project settings, WASD is mapped to "left", "right", "up" and "down"
-	var direction = Input.get_vector("left", "right", "up", "down");
+	var direction := Input.get_vector("left", "right", "up", "down");
 	
 	is_sprinting = Input.is_key_pressed(KEY_SHIFT); ## true or false
 	
@@ -48,11 +48,11 @@ func update_player_movement(delta):
 		
 	## zooming out when sprinting
 	if is_sprinting:
-		var zoom_transition = create_tween();
+		var zoom_transition := create_tween();
 		zoom_transition.tween_property($"../Camera2D", "zoom", Vector2(2.8, 2.8), 0.4);
 	## zooming back in when end sprint
 	else:
-		var zoom_transition = create_tween();
+		var zoom_transition := create_tween();
 		zoom_transition.tween_property($"../Camera2D", "zoom", Vector2(3.0, 3.0), 0.4);
 	
 	## velocity is a pre-existing class variable for movement
