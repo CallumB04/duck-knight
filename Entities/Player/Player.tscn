@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://brlc82plp4cy7"]
+[gd_scene load_steps=6 format=3 uid="uid://brlc82plp4cy7"]
 
 [ext_resource type="Texture2D" uid="uid://bbjttybnufsul" path="res://Entities/Player/Art/Idle/idle_side.png" id="1_e5kic"]
+[ext_resource type="Script" uid="uid://brpwh3nm5aca4" path="res://Entities/Player/Player.gd" id="1_ww0jn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5kic"]
 atlas = ExtResource("1_e5kic")
@@ -17,9 +18,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vweq0"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ww0jn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vweq0")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_vweq0")
