@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cn2mexgrmhg7x"]
 
 [ext_resource type="PackedScene" uid="uid://cqadstuhxsixk" path="res://Stages/TestLevel/TestLevel.tscn" id="1_wbfu4"]
-[ext_resource type="PackedScene" uid="uid://drcsimhb7ulra" path="res://Entities/UI/UI.tscn" id="2_xkndl"]
+[ext_resource type="PackedScene" uid="uid://drcsimhb7ulra" path="res://UI/UI.tscn" id="2_xkndl"]
 
 [node name="Game" type="Node2D"]
 
