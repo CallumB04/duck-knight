@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqadstuhxsixk"]
+[gd_scene load_steps=3 format=3 uid="uid://cqadstuhxsixk"]
 
 [ext_resource type="PackedScene" uid="uid://brlc82plp4cy7" path="res://Entities/Player/Player.tscn" id="1_x7k08"]
+[ext_resource type="Script" uid="uid://d20hdh83d2xfg" path="res://Stages/TestLevel/Camera_2D.gd" id="2_q1676"]
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_x7k08")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
+script = ExtResource("2_q1676")
+player = NodePath("../Player")
